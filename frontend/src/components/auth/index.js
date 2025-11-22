@@ -1,3 +1,4 @@
 import Login from "./Login.vue";
 import Register from "./Register.vue";
-export { Login, Register }
+import NotFound from "./NotFound.vue";
+export { Login, Register, NotFound }
