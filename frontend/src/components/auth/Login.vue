@@ -10,8 +10,8 @@
         <v-card class="pa-5" width="400">
           <v-card-title class="text-center">Login</v-card-title>
           <v-form>
-            <v-text-field label="Username or Email"  variant="outlined" density="compact" required />
-            <v-text-field label="Password" type="password" variant="outlined" density="compact" required />
+            <v-text-field label="Username or Email"  variant="outlined" density="compact" required autofocus prepend-inner-icon="mdi-account-circle" />
+            <v-text-field label="Password" type="password" variant="outlined" density="compact" required prepend-inner-icon="mdi-lock" />
             <v-btn color="primary" block variant="flat">Login</v-btn>
             <router-link :to="{ name: 'register'}">Register</router-link>
           </v-form>
