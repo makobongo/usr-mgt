@@ -1,0 +1,19 @@
+FROM node:22.19.0
+
+# Setting the working directory inside the container
+WORKDIR /app
+
+# Copying the package.json and package-lock.json files
+COPY package*.json ./
+
+# Installing dependencies
+RUN npm install
+
+# Copying the rest of the application files
+COPY . .
+
+# Exposing the port that the Vue.js app is running on
+EXPOSE 3000
+
+# Starting the Vue.js app (in development mode)
+CMD ["npm", "run", "dev"]
