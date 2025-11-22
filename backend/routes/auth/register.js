@@ -27,7 +27,11 @@ router.post('/register',registerValidator, async(req, res) => {
             const user = 'INSERT INTO users (id, name, email, phone, password) VALUES (?,?, ?, ?, ?)';
             connection.execute(user,  [userId, name, email, phone, hashedPassword], (err, results)=>{
                 if(err){
-                    return res.status(500).json({ message: 'Internal server error' });
+                    if (err.code === 'ER_DUP_ENTRY') {
+                        return res.status(409).json({ message: 'Email or Phone already registered. Either must be unique!' });
+                    }
+                    console.error('Error inserting user:', err);
+                    return res.status(500).json({ message: 'Internal server error.' });
                 }
                 res.status(201).json({
                     message: 'User registered successfully',
@@ -36,7 +40,7 @@ router.post('/register',registerValidator, async(req, res) => {
             });
         } catch (error) {
             return res.json({
-                msg: 'Sorry! Not Successful!'
+                message: 'Sorry! Not Successful!'
             })
         }
 });
