@@ -13,6 +13,7 @@
             <v-text-field label="Username or Email"  variant="outlined" density="compact" required />
             <v-text-field label="Password" type="password" variant="outlined" density="compact" required />
             <v-btn color="primary" block variant="flat">Login</v-btn>
+            <router-link :to="{ name: 'register'}">Register</router-link>
           </v-form>
         </v-card>
       </v-col>
