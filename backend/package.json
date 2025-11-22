@@ -1,20 +1,11 @@
 {
-  "name": "back",
-  "version": "0.0.0",
-  "private": true,
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for usr management",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.11"
-  }
+  "author": "makobongo",
+  "license": "ISC"
 }
