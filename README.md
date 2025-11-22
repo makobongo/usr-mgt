@@ -1,5 +1,3 @@
-Here's the `README.md` file based on the detailed instructions you provided. You can add this file to your project root directory:
-
 ````markdown
 # Project Setup Guide
 
