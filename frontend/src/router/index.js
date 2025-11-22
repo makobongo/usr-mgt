@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { Login, Register, NotFound } from "@/components/auth";
+import {Dashboard} from '@/components/views';
 const routes = [
   {
     path: '/',
@@ -10,6 +11,11 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register
+  },
+  {
+    path:'/dashboard',
+    name:'dashboard',
+    component: Dashboard
   },
   // Catch-all route for 404
   {
