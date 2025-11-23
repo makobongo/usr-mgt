@@ -1,7 +1,12 @@
 ````markdown
+# INSTALL DOCKER 
+RUN docker compose up --build
+````
+OR 
+````markdown
 # Project Setup Guide
 
-Welcome to the project! Below are the steps to get both the frontend and backend running on your local machine.
+Follow below to get started the manual way
 
 ## Prerequisites
 
