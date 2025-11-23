@@ -12,6 +12,22 @@ services:
       - ./frontend/src:/app/src  # Bind mount the 'src' folder so changes are reflected
     command: npm run dev
     working_dir: /app # Ensures we're in the app directory
+  
+  backend:
+    container_name: backend
+    build: ./backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend:/app
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: secret
+      DB_NAME: usr_mgt
+    depends_on:
+      - db
+    command: npm run dev
 
   db:
     image: mysql:8.0
