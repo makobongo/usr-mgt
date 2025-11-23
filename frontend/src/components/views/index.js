@@ -1,2 +1,2 @@
-import Dashboard from "./Dashboard.vue";
-export {Dashboard}
+import UserDashboard from "./UserDashboard.vue";
+export {UserDashboard}

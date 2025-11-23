@@ -116,7 +116,6 @@
 import { ref, onMounted } from 'vue';
 
 // Sidebar visibility (always visible)
-const sidebar = ref(true);
 
 // User profile data
 const totalUsers = ref(1245);

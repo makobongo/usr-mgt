@@ -7,10 +7,12 @@
         <v-carousel v-model="carouselIndex" hide-delimiters>
           <v-carousel-item v-for="(image, index) in images" :key="index">
              <v-img :src="image.img" alt="carousel image">
-              <div class="caption" slot="bottom">
+              <template v-slot:bottom>
+<div class="caption" >
                 <h2>{{ image.title }}</h2>
                 <p>{{ image.description }}</p>
               </div>
+</template>
             </v-img>
           </v-carousel-item>
         </v-carousel>
