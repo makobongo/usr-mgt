@@ -1,4 +1,4 @@
-FROM node:22.19.0
+FROM node:22.19.0-alpine
 
 # Setting the working directory inside the container
 WORKDIR /app
