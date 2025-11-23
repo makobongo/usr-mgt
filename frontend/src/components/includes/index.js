@@ -1,2 +1,2 @@
-import Carousel from "./Carousel.vue";
+import Carousel from "./ImageCarousel.vue";
 export {Carousel}
