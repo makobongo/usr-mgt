@@ -1,5 +1,6 @@
 services:
   frontend:
+    container_name: frontend
     build: 
       context: ./frontend
       dockerfile: Dockerfile
@@ -11,3 +12,17 @@ services:
       - ./frontend/src:/app/src  # Bind mount the 'src' folder so changes are reflected
     command: npm run dev
     working_dir: /app # Ensures we're in the app directory
+
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: usr_mgt
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
