@@ -1,6 +1,7 @@
 services:
   frontend:
     container_name: frontend
+    image: frontend:1.0.0
     build: 
       context: ./frontend
       dockerfile: Dockerfile
@@ -15,6 +16,7 @@ services:
   
   backend:
     container_name: backend
+    image: backend:1.0.0
     build: ./backend
     ports:
       - "3001:3001"
