@@ -1,6 +1,7 @@
 var bcrypt = require('bcryptjs');
 var connection = require('../../config/db');
 const { validationResult } = require('express-validator');
+const jwt = require('jsonwebtoken');
 
 exports.login = async (req, res, next) => {
   try {
@@ -20,8 +21,9 @@ exports.login = async (req, res, next) => {
             message: 'Sorry! wrong credentials'
           })
         } else {
+          const token = jwt.sign({ email: results[0]['email'] },process.env.JWT_SECRET,{ expiresIn: '5m' })
           return res.json({
-            message: 'Logged in successfully'
+            message: token
           })
         }
       }else {
