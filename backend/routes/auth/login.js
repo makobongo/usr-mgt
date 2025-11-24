@@ -15,22 +15,24 @@ router.post('/login', loginValidator, async (req, res, next) => {
     }
     // If validation passes, proceed with business logic
     const { email, password } = req.body;
-    // Generating a salt (random string)
-    const salt = await bcrypt.genSalt(10);
-    // Hashing password with the generated salt
-    const hashedPassword = await bcrypt.hash(password, salt);
     connection.execute('SELECT email, password FROM users WHERE email = ?', [email], async(error, results, fields) => {
-      if(error){
-        return res.status(500).json({
-          message: 'Sorry! user not found'
+      if(results.length){
+        // Compare plaintext vs hashed
+        const isMatch = await bcrypt.compare(password, results[0]['password']);
+        if(!isMatch){
+          return res.json({
+            message: 'Sorry! wrong credentials'
+          })
+        } else {
+          return res.json({
+            message: 'Logged in successfully'
+          })
+        }
+      }else {
+        return res.json({
+          message: 'Sorry! wrong credentials'
         })
       }
-      // Compare plaintext vs hashed
-    const isMatch = await bcrypt.compare(password, results[0]['password']);
-    if (!isMatch) {
-      return res.status(401).json({ message: "login credentials are invalid" });
-    }
-    res.status(200).json({ message: "Logged in successfully" });
     });
   } catch (error) {
     return res.status(500).json({
