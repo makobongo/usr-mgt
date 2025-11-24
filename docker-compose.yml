@@ -19,7 +19,7 @@ services:
     ports:
       - "3001:3001"
     volumes:
-      - ./backend:/app
+      - ./backend:/usr/src/app
     environment:
       DB_HOST: mysql
       DB_USER: root

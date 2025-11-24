@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/login', function(req, res, next) {
-  res.json({
-    msg: "success!"
+/* POST home page. */
+router.post('/login', (req, res, next) => {
+  return res.json({
+    message: "success!!"
   });
 });
 
