@@ -21,7 +21,7 @@ exports.login = async (req, res, next) => {
             message: 'Sorry! wrong credentials'
           })
         } else {
-          const token = jwt.sign({ email: results[0]['email'] },process.env.JWT_SECRET,{ expiresIn: process.env.JWT_EXPIRATION })
+          const token = jwt.sign({ email: results[0]['email'] },process.env.JWT_SECRET,{ expiresIn: '3m' })
           return res.json({
             message: token
           })
