@@ -15,7 +15,7 @@ app.use(cors());
 
 // Enable CORS for specific origins
 app.use(cors({
-  origin: 'http://localhost:3000/',
+  origin: 'http://localhost:3000',
   methods: 'GET,POST,PUT,DELETE',  // Allowed HTTP methods
   allowedHeaders: 'Content-Type,Authorization',  // Allowed headers
   credentials: true, // Allow cookies or credentials
