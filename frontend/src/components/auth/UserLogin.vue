@@ -27,7 +27,7 @@
 <script setup>
 import { Carousel } from '../includes';
 import { ref } from 'vue';
-import axios from 'axios';
+import { createUser } from '@/api/auth/login';
 
 const form = ref({
   email: '',
@@ -35,9 +35,8 @@ const form = ref({
 })
 const loginUser = async() => {
   try {
-    const res = await axios.post('http://localhost:3001/api/auth/login', form.value)
+    const res = await createUser(form.value)
     console.log(res.data)
-  //  return res.data;
   } catch (error) {
     console.log(error)
   }
