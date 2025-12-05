@@ -17,17 +17,17 @@ exports.login = async (req, res, next) => {
         // Compare plaintext vs hashed
         const isMatch = await bcrypt.compare(password, results[0]['password']);
         if(!isMatch){
-          return res.json({
+          return res.status(404).json({
             message: 'Sorry! wrong credentials'
           })
         } else {
           const token = jwt.sign({ email: results[0]['email'] },process.env.JWT_SECRET,{ expiresIn: '3m' })
-          return res.json({
+          return res.status(200).json({
             message: token
           })
         }
       }else {
-        return res.json({
+        return res.status(404).json({
           message: 'Sorry! wrong credentials'
         })
       }
