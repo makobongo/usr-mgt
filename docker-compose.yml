@@ -1,7 +1,7 @@
 services:
   frontend:
     container_name: frontend
-    image: frontend:1.0.0
+    image: frontend:v1.0.0
     build: 
       context: ./frontend
       dockerfile: Dockerfile
@@ -16,8 +16,11 @@ services:
   
   backend:
     container_name: backend
-    image: backend:1.0.0
+    image: backend:v1.0.0
     build: ./backend
+    restart: always
+    env_file:
+      - ./backend/.env
     ports:
       - "3001:3001"
     volumes:
