@@ -2,6 +2,7 @@ services:
   frontend:
     container_name: frontend
     image: frontend:v1.0.0
+    restart: always
     build: 
       context: ./frontend
       dockerfile: Dockerfile
