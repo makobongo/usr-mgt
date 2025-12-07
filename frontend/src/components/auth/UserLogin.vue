@@ -28,6 +28,8 @@
 import { Carousel } from '../includes';
 import { ref } from 'vue';
 import { createUser } from '@/api/auth/login';
+import { inject } from 'vue';
+const swal = inject('$swal');
 
 const form = ref({
   email: '',
@@ -36,9 +38,22 @@ const form = ref({
 const loginUser = async() => {
   try {
     const res = await createUser(form.value)
-    console.log(res.data)
+    console.log('message:', res.data)
   } catch (error) {
-    console.log(error)
+    console.log(error.response.data.message)
+    if(error.status==404){
+      swal.fire({
+        title: 'Sorry!',
+        text: error.response.data.message,
+        icon: 'error',
+      });
+    } else {
+      swal.fire({
+        title: 'Error!',
+        text: 'Something went wrong!',
+        icon: 'error',
+      });
+    }
   }
 }
 </script>

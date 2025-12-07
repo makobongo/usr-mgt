@@ -2,6 +2,7 @@ services:
   frontend:
     container_name: frontend
     image: frontend:v1.0.0
+    restart: always
     build: 
       context: ./frontend
       dockerfile: Dockerfile
@@ -37,6 +38,7 @@ services:
   db:
     image: mysql:8.0
     container_name: mysql
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: usr_mgt
