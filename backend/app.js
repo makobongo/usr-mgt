@@ -3,6 +3,7 @@ const app = express();
 const port = 3001;
 var loginRouter = require('./routes/auth/login');
 var registerRouter = require('./routes/auth/register');
+var mailRouter = require('./routes/auth/mail');
 var profileRouter = require('./routes/profile');
 var bodyParser = require('body-parser');
 const cors = require('cors');
@@ -25,6 +26,7 @@ app.use(cors({
 
 app.use('/api/auth', loginRouter);
 app.use('/api/auth', registerRouter);
+app.use('/api/auth', mailRouter);
 app.use('/api/auth', profileRouter);
 
 
