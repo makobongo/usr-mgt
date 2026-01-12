@@ -29,7 +29,9 @@
             <v-btn color="primary" block variant="flat" @click="loginUser"
               >Login</v-btn
             >
-            <router-link :to="{ name: 'register' }">Register</router-link>
+            <p style="font-size: 12px;margin-top: 5px;">
+              Dont't have account? <router-link :to="{ name: 'register'}">register</router-link>
+            </p>
           </v-form>
         </v-card>
       </v-col>
