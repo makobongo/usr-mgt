@@ -14,8 +14,10 @@
             <v-text-field label="Email"  variant="outlined" density="compact" required prepend-inner-icon="mdi-account-circle"/>
             <v-text-field label="Phone"  variant="outlined" density="compact" required prepend-inner-icon="mdi-phone"/>
             <v-text-field label="Password" type="password" variant="outlined" density="compact" required prepend-inner-icon="mdi-lock"/>
-            <v-btn color="primary" block variant="flat">Login</v-btn>
-            <router-link :to="{ name: 'login'}">login</router-link>
+            <v-btn color="primary" block variant="flat">register</v-btn>
+            <p style="font-size: 12px;margin-top: 5px;">
+              Already have account?<router-link :to="{ name: 'login'}">login</router-link>
+            </p>
           </v-form>
         </v-card>
       </v-col>
