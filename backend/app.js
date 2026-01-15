@@ -7,6 +7,7 @@ var mailRouter = require('./routes/auth/mail');
 var profileRouter = require('./routes/profile');
 var bodyParser = require('body-parser');
 const cors = require('cors');
+require('dotenv').config();
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
@@ -16,7 +17,7 @@ app.use(cors());
 
 // Enable CORS for specific origins
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: process.env.ORIGIN_URL,
   methods: 'GET,POST,PUT,DELETE',  // Allowed HTTP methods
   allowedHeaders: 'Content-Type,Authorization',  // Allowed headers
   credentials: true, // Allow cookies or credentials
