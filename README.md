@@ -17,3 +17,7 @@ docker compose up --build
 ````
 docker compose down
 ````
+## NOTE
+````
+when running locally note frontend runs on localhost:3000 and backend on localhost:3001 respectively. Remember to make a copy of .env from .env.example in each directory i.e. both the frontend and backend and populate your details accordingly on each file
+````
