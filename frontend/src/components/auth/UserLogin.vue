@@ -26,11 +26,17 @@
               :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
               @click:append-inner="showPassword = !showPassword"
             />
-            <v-btn color="primary" block variant="flat" @click="loginUser"
+            <v-btn
+              color="primary"
+              block
+              variant="flat"
+              @click="loginUser"
+              prepend-icon="mdi-check-circle"
               >Login</v-btn
             >
-            <p style="font-size: 12px;margin-top: 5px;">
-              Dont't have account? <router-link :to="{ name: 'register'}">register</router-link>
+            <p style="font-size: 12px; margin-top: 5px">
+              Dont't have account?
+              <router-link :to="{ name: 'register' }">register</router-link>
             </p>
           </v-form>
         </v-card>
