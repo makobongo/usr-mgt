@@ -2,21 +2,50 @@
   <v-container fluid>
     <v-row>
       <!-- Login Section -->
-      <v-col
-        cols="12"
-        md="6"
-        class="d-flex justify-center align-center"
-      >
+      <v-col cols="12" md="6" class="d-flex justify-center align-center">
         <v-card class="pa-5" width="400">
           <v-card-title class="text-center">Register</v-card-title>
           <v-form>
-            <v-text-field label="Name"  variant="outlined" density="compact" required prepend-inner-icon="mdi-account-star"/>
-            <v-text-field label="Email"  variant="outlined" density="compact" required prepend-inner-icon="mdi-account-circle"/>
-            <v-text-field label="Phone"  variant="outlined" density="compact" required prepend-inner-icon="mdi-phone"/>
-            <v-text-field label="Password" type="password" variant="outlined" density="compact" required prepend-inner-icon="mdi-lock"/>
-            <v-btn color="primary" block variant="flat">register</v-btn>
-            <p style="font-size: 12px;margin-top: 5px;">
-              Already have account?<router-link :to="{ name: 'login'}">login</router-link>
+            <v-text-field
+              label="Name"
+              variant="outlined"
+              density="compact"
+              required
+              prepend-inner-icon="mdi-account-star"
+            />
+            <v-text-field
+              label="Email"
+              variant="outlined"
+              density="compact"
+              required
+              prepend-inner-icon="mdi-account-circle"
+            />
+            <v-text-field
+              label="Phone"
+              variant="outlined"
+              density="compact"
+              required
+              prepend-inner-icon="mdi-phone"
+            />
+            <v-text-field
+              label="Password"
+              type="password"
+              variant="outlined"
+              density="compact"
+              required
+              prepend-inner-icon="mdi-lock"
+            />
+            <v-btn
+              color="primary"
+              block
+              variant="flat"
+              prepend-icon="mdi-account-circle"
+              >register</v-btn
+            >
+            <p style="font-size: 12px; margin-top: 5px">
+              Already have account?<router-link :to="{ name: 'login' }"
+                >login</router-link
+              >
             </p>
           </v-form>
         </v-card>
@@ -29,5 +58,5 @@
 </template>
 
 <script setup>
-import { Carousel } from '../includes';
+import { Carousel } from "../includes";
 </script>
